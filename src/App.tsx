@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Mail, ChevronRight, CheckCircle2, Clock, Dumbbell, Flame, Crosshair, Shield, Target, Coffee } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
@@ -13,7 +13,11 @@ const App: React.FC = () => {
           <div className="nav-links">
             <a href="#about" className="nav-link">About Us</a>
             <a href="#programs" className="nav-link">Programs</a>
+            <a href="#schedule" className="nav-link">Schedule</a>
             <a href="#contact" className="nav-link">Contact</a>
+            <a href="https://www.instagram.com/mamba_combat/" target="_blank" rel="noopener noreferrer" className="nav-link social-link" title="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
           </div>
         </div>
       </nav>
@@ -134,6 +138,73 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Schedule Section */}
+      <section id="schedule" className="section">
+        <div className="container">
+          <h2 className="section-title">Weekly <span className="highlight">Class Schedule</span></h2>
+          <div className="schedule-header">
+            <Clock size={24} color="var(--accent-primary)" />
+            <span>Timings: <strong>8:00 AM - 9:00 AM</strong> | <strong>7:00 PM - 8:00 PM</strong></span>
+          </div>
+          
+          <div className="schedule-grid">
+            <div className="schedule-card">
+              <div className="schedule-day">Monday</div>
+              <div className="schedule-class">
+                <Flame size={28} color="var(--accent-primary)" />
+                <h4>Boxing</h4>
+              </div>
+            </div>
+            
+            <div className="schedule-card">
+              <div className="schedule-day">Tuesday</div>
+              <div className="schedule-class">
+                <Crosshair size={28} color="var(--accent-primary)" />
+                <h4>Kickboxing</h4>
+              </div>
+            </div>
+            
+            <div className="schedule-card">
+              <div className="schedule-day">Wednesday</div>
+              <div className="schedule-class">
+                <Shield size={28} color="var(--accent-primary)" />
+                <h4>BJJ & Wrestling</h4>
+              </div>
+            </div>
+            
+            <div className="schedule-card">
+              <div className="schedule-day">Thursday</div>
+              <div className="schedule-class">
+                <Dumbbell size={28} color="var(--accent-primary)" />
+                <h4>Strength & Conditioning</h4>
+              </div>
+            </div>
+            
+            <div className="schedule-card">
+              <div className="schedule-day">Friday</div>
+              <div className="schedule-class">
+                <Target size={28} color="var(--accent-primary)" />
+                <h4>Sparring Day</h4>
+              </div>
+            </div>
+            
+            <div className="schedule-card rest-card">
+              <div className="schedule-day">Weekend</div>
+              <div className="schedule-class">
+                <Coffee size={28} color="var(--text-secondary)" />
+                <h4>Rest & Recovery (Closed)</h4>
+              </div>
+            </div>
+          </div>
+          
+          <div className="schedule-footer">
+            <p>
+              "All classes are scalable and safe for every age and fitness level. Whether you are a college student or a senior citizen, Coach Athul will adapt the workout to help you get better every single day."
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Location & Contact Section */}
       <section id="contact" className="section">
         <div className="container">
@@ -206,13 +277,23 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="container">
-          <div className="footer-logo">
-            <img src="https://adrilly-s3.s3.ap-south-1.amazonaws.com/organizations/6a27b13996e2a1d24acc3981/logo/20260610_024434_4557a2e9.jpeg" alt="Mamba Combat Academy Logo" className="logo-img" />
-            <span className="highlight">MAMBA</span> COMBAT ACADEMY
+          <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2rem' }}>
+            <div>
+              <div className="footer-logo" style={{ justifyContent: 'flex-start', margin: 0 }}>
+                <img src="https://adrilly-s3.s3.ap-south-1.amazonaws.com/organizations/6a27b13996e2a1d24acc3981/logo/20260610_024434_4557a2e9.jpeg" alt="Mamba Combat Academy Logo" className="logo-img" />
+                <span className="highlight">MAMBA</span> COMBAT ACADEMY
+              </div>
+              <p className="footer-text" style={{ margin: '1rem 0 0 0', textAlign: 'left' }}>
+                © {new Date().getFullYear()} Mamba Combat Academy. Be Better Every Single Day.
+              </p>
+            </div>
+            
+            <div className="footer-social">
+              <a href="https://www.instagram.com/mamba_combat/" target="_blank" rel="noopener noreferrer" className="social-icon" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              </a>
+            </div>
           </div>
-          <p className="footer-text">
-            © {new Date().getFullYear()} Mamba Combat Academy. Be Better Every Single Day.
-          </p>
         </div>
       </footer>
     </>

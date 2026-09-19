@@ -198,6 +198,25 @@ button {
   max-width: 600px;
 }
 
+/* Intro Video Section */
+.intro-video-container {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  background: #000;
+}
+
+.intro-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
 /* About Section */
 .about-grid {
   display: grid;

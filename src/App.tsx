@@ -42,8 +42,24 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Introduction Video */}
+      <section className="section" style={{ paddingBottom: '2rem' }}>
+        <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
+          <div className="intro-video-container">
+            <video 
+              src="/videos/hero_video.mp4" 
+              controls 
+              className="intro-video"
+              poster="/images/intro_thumbnail.jpg"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+
       {/* About Us / Our Philosophy */}
-      <section id="about" className="section">
+      <section id="about" className="section" style={{ paddingTop: '2rem' }}>
         <div className="container">
           <h2 className="section-title">Our <span className="highlight">Philosophy</span></h2>
           <p className="section-subtitle">More than just a gym, we are a community dedicated to growth.</p>

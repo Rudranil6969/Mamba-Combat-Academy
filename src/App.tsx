@@ -1,7 +1,9 @@
-import React from 'react';
-import { MapPin, Phone, Mail, ChevronRight, CheckCircle2, Clock, Dumbbell, Flame, Crosshair, Shield, Target, Coffee } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, ChevronRight, CheckCircle2, Clock, Dumbbell, Flame, Crosshair, Shield, Target, Coffee, Menu, X } from 'lucide-react';
 
 const App: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   return (
     <>
       <nav className="navbar">
@@ -10,15 +12,18 @@ const App: React.FC = () => {
             <img src="https://adrilly-s3.s3.ap-south-1.amazonaws.com/organizations/6a27b13996e2a1d24acc3981/logo/20260610_024434_4557a2e9.jpeg" alt="Mamba Combat Academy Logo" className="logo-img" />
             <span className="highlight">MAMBA</span> COMBAT ACADEMY
           </div>
-          <div className="nav-links">
-            <a href="#about" className="nav-link">About Us</a>
-            <a href="#programs" className="nav-link">Programs</a>
-            <a href="#schedule" className="nav-link">Schedule</a>
-            <a href="#contact" className="nav-link">Contact</a>
+          <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+            <a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About Us</a>
+            <a href="#programs" className="nav-link" onClick={() => setIsMenuOpen(false)}>Programs</a>
+            <a href="#schedule" className="nav-link" onClick={() => setIsMenuOpen(false)}>Schedule</a>
+            <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact</a>
             <a href="https://www.instagram.com/mamba_combat/" target="_blank" rel="noopener noreferrer" className="nav-link social-link" title="Instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
           </div>
+          <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
 
